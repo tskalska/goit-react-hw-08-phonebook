@@ -22,7 +22,7 @@ const rootReducer = combineReducers({
 })
 
 
-// const persistedReducer = persistReducer(persistConfig, rootReducer)
+// const per§sistedReducer = persistReducer(persistConfig, rootReducer)
 
 
 

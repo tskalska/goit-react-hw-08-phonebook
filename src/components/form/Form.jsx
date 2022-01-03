@@ -2,8 +2,10 @@ import React from 'react';
 import {useState} from 'react';
 import styles from './Form.module.css';
 import {connect, useSelector} from 'react-redux';
-import {addContact} from '../../redux/contactsRedux/actions';
+// import { addContactsSuccess} from '../../redux/contactsRedux/actions';
 import PropTypes from 'prop-types';
+import { addContact } from  '../../redux/contactsRedux/operations';
+
 
 
 const Form = props => {
