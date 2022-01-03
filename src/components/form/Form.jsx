@@ -2,11 +2,8 @@ import React from 'react';
 import {useState} from 'react';
 import styles from './Form.module.css';
 import {connect, useSelector} from 'react-redux';
-// import { addContactsSuccess} from '../../redux/contactsRedux/actions';
 import PropTypes from 'prop-types';
 import { addContact } from  '../../redux/contactsRedux/operations';
-
-
 
 const Form = props => {
 
@@ -15,9 +12,6 @@ const Form = props => {
   const [error, setError]=useState('');
 
   const contacts = useSelector(state => state.contacts)
-
-
-
 
   const handleChange = (event) => {
     const {name, value} = event.target;
@@ -47,7 +41,6 @@ const Form = props => {
       event.target.reset();
     }
   }
-
 
   return (
     <div className = {styles.formContainer}>

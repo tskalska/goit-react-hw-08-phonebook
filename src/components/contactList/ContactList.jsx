@@ -13,10 +13,6 @@ export default function ContactList (){
   useEffect(()=>{
     dispatch(fetchContacts());
   }, [dispatch])
-
-
-  console.log(contacts);
-
   
 
   const filteredList = contacts.filter(contact => contact.name.includes(filter))

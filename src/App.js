@@ -15,9 +15,7 @@ export default function App() {
       <h1>Phonebook</h1><br/>
       {error && <p style = {{color:'red'}}>{error}</p>}
       <Form />
-
       <Filter />
-      
       <ContactList />
     </div>
   );

@@ -17,12 +17,18 @@ export const loadingReducer = createReducer(false, {
     [addContact.pending]: ()=> true,
     [addContact.fulfilled]: ()=> false,
     [addContact.rejected]: ()=> false,
+    [deleteContact.pending]: ()=> true,
+    [deleteContact.fulfilled]: ()=> false,
+    [deleteContact.rejected]: ()=> false,
 })
 
 export const errorsReducer = createReducer(null,{
     [fetchContacts.rejected]: (_,{payload})=> payload,
     [fetchContacts.pending]: ()=> null,
-
+    [addContact.pending]: ()=> null,
+    [addContact.rejected]: ()=> 'Error: Not added',
+    [deleteContact.pending]: ()=> null,
+    [deleteContact.rejected]: ()=> 'Error: Not deleted',
 })
 
 export const filterReducer = createReducer('', {
