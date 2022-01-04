@@ -31,7 +31,8 @@ const Form = props => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    if (contacts.some(contact => contact.name.toLowerCase()===newName)){
+    if (contacts.some(contact => contact.name===newName)){
+      console.log('123')
       setError(newName);
       return;
     } else {
@@ -39,6 +40,7 @@ const Form = props => {
       setNewName('');
       setNewNumber(''); 
       event.target.reset();
+      setError('');
     }
   }
 
@@ -72,7 +74,7 @@ const Form = props => {
         </label>
         <button className={styles.formButton}>Add contact</button>
       </form>
-      {error && <span className={styles.error}>The name {newName} already exists.</span> }
+      {error && <span className={styles.error}>This name already exists.</span> }
     </div>
   );
 
