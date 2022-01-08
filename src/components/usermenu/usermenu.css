@@ -1,0 +1,4 @@
+.active {
+    composes: link;
+    color: #55f026;
+  }

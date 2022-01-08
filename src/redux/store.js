@@ -1,11 +1,12 @@
 import {configureStore, combineReducers} from '@reduxjs/toolkit';
-import {contactsReducer, filterReducer, loadingReducer, errorsReducer,} from './contactsRedux/reducer'
-
+// import {contactsReducer, filterReducer, loadingReducer, errorsReducer} from './contactsRedux/reducer'
+import authReducer from './auth/auth-reducer';
 const rootReducer = combineReducers({
-    contacts: contactsReducer,
-    filter: filterReducer,
-    isLoading: loadingReducer,
-    error: errorsReducer
+    auth: authReducer,
+    // contacts: contactsReducer,
+    // filter: filterReducer,
+    // isLoading: loadingReducer,
+    // error: errorsReducer
 })
 
 const store = configureStore({

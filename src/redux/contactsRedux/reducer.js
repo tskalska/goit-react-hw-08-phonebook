@@ -36,3 +36,4 @@ export const filterReducer = createReducer('', {
         return payload;
     }
 } )
+

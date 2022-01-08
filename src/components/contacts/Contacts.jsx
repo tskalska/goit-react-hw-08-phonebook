@@ -3,23 +3,24 @@ import {v4 as uuidv4} from 'uuid';
 import {useDispatch, useSelector} from 'react-redux';
 import { fetchContacts, deleteContact } from  '../../redux/contactsRedux/operations';
 
-export default function ContactList (){
+export default function Contacts (){
   
-  const dispatch = useDispatch();
-  const contacts = useSelector(state => state.contacts);
-  const filter = useSelector(state => state.filter);
+//   const dispatch = useDispatch();
+//   const contacts = useSelector(state => state.contacts);
+//   const filter = useSelector(state => state.filter);
 
 
-  useEffect(()=>{
-    dispatch(fetchContacts());
-  }, [dispatch])
+//   useEffect(()=>{
+//     dispatch(fetchContacts());
+//   }, [dispatch])
   
 
-  const filteredList = contacts.filter(contact => contact.name.includes(filter))
+//   const filteredList = contacts.filter(contact => contact.name.includes(filter))
   
   return ( 
   <div>
-    {!contacts && <span>У вас нет контактов!</span>}
+      Contacts: 
+    {/* {!contacts && <span>У вас нет контактов!</span>}
     {contacts &&
     <div>
       <h2>Contacts: </h2><br />
@@ -33,6 +34,6 @@ export default function ContactList (){
         )}
       </ul>
     </div>
-    }
+    } */}
   </div>)
 }
