@@ -18,14 +18,14 @@
     margin-left: 15px;
     margin-bottom: 15px;
   }
-  
-  .error {
-    color: rgb(226, 112, 6);
-    text-decoration: solid underline;
+
+  .formButton {
+    height: 30px;
   }
 
-  .registrationMessage {
+  .error {
     color:#263df0;
     padding: 15px;
     margin: 30px auto;
+    text-decoration: none;
   }

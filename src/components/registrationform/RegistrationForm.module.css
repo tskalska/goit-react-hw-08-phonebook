@@ -19,11 +19,6 @@
     margin-bottom: 15px;
   }
   
-  .formButton {
-    width: 200px;
-    height: 20px;
-  }
-  
   .error {
     color: rgb(226, 112, 6);
     text-decoration: solid underline;

@@ -10,8 +10,6 @@ export default function UserMenu() {
 
     const dispatch = useDispatch('');
 
-    // const isRegistered =  useSelector(authSelectors.isRegistered);
-    // const logedIn =  useSelector(authSelectors.getIsLoggedIn);
     const navigate = useNavigate();
 
     const name = useSelector(state => state.auth.user.name);
@@ -19,20 +17,22 @@ export default function UserMenu() {
 
     return (
         <div className={style.container}>
-            <span>Welcome, {name}! </span>
-            <ul>
-                <li><NavLink className="link" exact strict to="/usermenu" end> Home </NavLink></li>
-                <li><NavLink className="link" exact strict to= {'contacts'}> Contacts </NavLink></li>
-            </ul>
-            <span className={style.email}>{email}</span>
-            <button 
-                className={style.button} 
-                type="button" 
-                onClick={() => {
-                    dispatch(authOperations.logOut());
-                    navigate('/')}}>
-                        Выйти
-            </button>
+            <div className={style.containerMenu}>
+                <span className={style.userName}>Welcome, {name}! </span>
+                <ul className={style.linkList}>
+                    <li><NavLink className={style.link} to="/usermenu" end> Home </NavLink></li>
+                    <li><NavLink className={style.link} to= {'contacts'}> Contacts </NavLink></li>
+                </ul>
+                <span className={style.userEmail}>{email}</span>
+                <button 
+                    className={style.buttonExit} 
+                    type="button" 
+                    onClick={() => {
+                        dispatch(authOperations.logOut());
+                        navigate('/')}}>
+                            Выйти
+                </button>
+            </div>
             <Outlet />
         </div>
     );

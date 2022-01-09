@@ -6,9 +6,6 @@ import styles from './RegistrationForm.module.css';
 import { useNavigate } from 'react-router-dom';
 
 import authSelectors from '../../redux/auth/auth-selectors';
-// import LoginForm from '../loginform/LoginForm';
-
-
 
 const RegistrationForm = () => {
 
@@ -20,9 +17,6 @@ const RegistrationForm = () => {
     const navigate = useNavigate();
 
     const isRegistered =  useSelector(authSelectors.isRegistered);
-    // const [error, setError]=useState('');
-    
-    // const contacts = useSelector(state => state.contacts)
     
     const handleChange = (event) => {
       const {name, value} = event.target;
@@ -103,11 +97,7 @@ const RegistrationForm = () => {
               </label>
               <button className={styles.formButton}>Register</button>
           </form>
-         
-          {/* {isRegistered ? <LoginForm /> : ''} */}
-          
-          {/* {error && <span className={styles.error}>This name already exists.</span> } */}
-          </div>
+        </div>
       ); 
   }
 

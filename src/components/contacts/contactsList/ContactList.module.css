@@ -1,0 +1,18 @@
+.deleteButton {
+    height: 30px;
+    width: 100px;
+    margin-left: 20px;
+}
+
+.itemContact {
+    margin-bottom: 15px;
+}
+
+.informMessage {
+    display: block;
+    color:#263df0;
+    padding: 15px;
+    margin: 30px auto;
+    text-decoration: none;
+    text-decoration: solid;
+}

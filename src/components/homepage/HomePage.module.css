@@ -1,0 +1,9 @@
+.homePageContainer {
+    margin: auto;
+    margin-top: 250px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-left: 150px;
+    padding-right: 150px;
+}

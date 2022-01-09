@@ -1,12 +1,12 @@
 import  { NavLink } from 'react-router-dom';
-import'./homepage.css';
+import style from './HomePage.module.css';
 
 const HomePage = () => (
-  <div>
-      <NavLink to="/login" className="link">
-        <button>Log in</button>  </NavLink>
+  <div className={style.homePageContainer}>
+    <NavLink to="/login" className="link">
+        <button className={style.button}>Log in</button>  </NavLink>
       <NavLink to="/register" className= "link">
-        <button>Register</button>
+        <button className={style.button}>Register</button>
       </NavLink>
   </div>
 ) 

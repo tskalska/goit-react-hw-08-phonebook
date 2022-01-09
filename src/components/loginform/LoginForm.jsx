@@ -6,25 +6,20 @@ import { useNavigate } from 'react-router-dom';
 
 import authOperations from '../../redux/auth/auth-operations';
 import authSelectors from '../../redux/auth/auth-selectors';
+import { useLocation } from 'react-router-dom'
 
 
 const LoginForm = () => {
 
     const [email, setEmail]=useState('');
-    const  [password, setPassword] = useState ('');
+    const [password, setPassword] = useState ('');
     const isRegistered =  useSelector(authSelectors.isRegistered);
     const logedIn =  useSelector(authSelectors.getIsLoggedIn);
-
-
-
+    const httpError =  useSelector(authSelectors.getHttpError);
+    const {state} = useLocation();
 
     const dispatch = useDispatch('');
     const navigate = useNavigate();
-
-
-    // const [error, setError]=useState('');
-    
-    // const contacts = useSelector(state => state.contacts)
     
     const handleChange = (event) => {
         const {name, value} = event.target;
@@ -46,21 +41,20 @@ const LoginForm = () => {
         event.preventDefault();
         dispatch(authOperations.logIn({email, password}));
         setEmail('');
-        setPassword(''); 
+        setPassword('');
         event.target.reset();
     }
 
     useEffect(() => { 
         if (logedIn) {
-          navigate ('/usermenu') 
+          navigate(state?.path || '/usermenu');
         }
       }, [logedIn, navigate]);
-
-
     
     return (
         <div className = {styles.formContainer}>
-            {isRegistered ? <div>  Congratulations, your account has been successfully created. Please, log in :)</div>: ''}
+            {isRegistered ? <div className={styles.registrationMessage}>  Congratulations, your account has been successfully created. Please, log in :)</div>: ''}
+            {httpError ? <div className={styles.error}>Login error</div> : ''}
             <form onSubmit = {handleSubmit} className={styles.form}>
             <label>
                 E-mail:
